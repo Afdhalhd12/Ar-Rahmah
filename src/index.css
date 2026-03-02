@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@source "../.flowbite-react/class-list.json";
+@import "flowbite-react/plugin/tailwindcss";
+@source "../flowbite-react/class-list.json";
+
+@font-face {
+  font-family: 'Uthman Hafs';
+  src: url('../src/assets/Font/mushaf-v4-warsh/uthmanic-warsh_v21.ttf');
+}
+
+@theme{
+  --font-uthman: "Uthman Hafs", "sans-serif";
+}
+
+.font-arabic {
+  font-family: 'Uthman Hafs', Times, serif !important; 
+}
+
+body {
+  font-family: Times, serif;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0f766e;
+  border-radius: 9999px;
+}
