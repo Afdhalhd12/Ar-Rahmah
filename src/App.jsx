@@ -5,7 +5,6 @@ import SurahList from './components/SurahList'
 
 function App() {
 
-
   return (
     <>
       <LandingComps />

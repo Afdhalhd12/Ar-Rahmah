@@ -176,7 +176,7 @@ return (
                                         </div>
 
                                         <div className="text-sm text-gray-500">
-                                            <span className="text-emerald-600 font-medium">→</span>
+                                            <span className="text-emerald-600 font-medium hover:animate-bounce">→</span>
                                         </div>
                                     </div>
                                 </div>

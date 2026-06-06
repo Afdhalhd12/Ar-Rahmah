@@ -21,16 +21,18 @@ export default function NavbarComps() {
       rounded
       className="bg-[#99b5b8] border border-[#99b5b8] backdrop-blur-sm w-full"
     >
-      <NavbarBrand href="#">
-        <img
-          src={arrahmah}
-          className="mr-3 h-6 sm:h-9"
-          alt="Logo"
-        />
-        <span className="self-center whitespace-nowrap text-xl font-semibold text-emerald-700">
-          Ar-Rahmah
-        </span>
-      </NavbarBrand>
+      <Link to="/">
+        <NavbarBrand href="#">
+          <img
+            src={arrahmah}
+            className="mr-3 h-6 sm:h-9"
+            alt="Logo"
+          />
+          <span className="self-center whitespace-nowrap text-xl font-semibold text-emerald-700">
+            Ar-Rahmah
+          </span>
+        </NavbarBrand>
+      </Link>
 
       <NavbarCollapse>
         <Link to="/">

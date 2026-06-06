@@ -55,12 +55,12 @@ export default function SurahComp({ surah }) {
         getSurahs();
     }, []);
 
-    
+
 
     return (
         <>
             <div className="bg-[#e9f5f1] p-3 md:p-5 mx-auto">
-
+                
                 {/* buat hp tak kasih ini aja */}
                 <div className="md:hidden mb-3">
                     <button
@@ -79,7 +79,7 @@ export default function SurahComp({ surah }) {
                             <SearchComp style={"w-full"} onSearch={setSearch} />
                             <div className="flex justify-center">
                                 <DropdownComp processorSort={processSort} design={'w-50 mt-2 hover:text-green-400 transform transition hover:scale-2.1'} />
-                            </div>  
+                            </div>
                         </div>
 
                         <div className="relative">
@@ -90,7 +90,7 @@ export default function SurahComp({ surah }) {
                             )}
                             <div className="space-y-1 max-h-[400px] md:max-h-[500px] overflow-y-auto overflow-x-hidden px-2 py-2">
                                 {filteredSurahs.map((surah) => (
-                                    <Link to={`/surah/${surah.nomor}`} key={surah.nomor} onClick={() => setShowList(false)}>
+                                    <Link to={`/surah/${surah.nomor}`}>
                                         <div className="flex items-center justify-between border-b border-gray-200 hover:bg-white hover:rounded-xl px-3 py-3 transition-all">
                                             <div className="flex items-center gap-3">
                                                 <span className="text-xs font-semibold text-gray-500 w-5 shrink-0">{surah.nomor}</span>
@@ -115,10 +115,17 @@ export default function SurahComp({ surah }) {
                         <div className="max-h-[75vh] md:max-h-[500px] overflow-y-auto overflow-x-hidden px-2 md:px-4 py-3">
 
                             <div className="border-b border-gray-300 mb-4">
-                                <h3 className="text-sm md:text-base font-semibold">Surah: {surah.namaLatin}</h3>
-                                <p className="text-xs md:text-sm text-gray-600 mb-3">Arti: {surah.arti}</p>
-                                <div dangerouslySetInnerHTML={{__html: surah.deskripsi}} className="text-xs md:text-sm text-gray-600 mb-3"></div>
-                                
+                                <div className="flex justify-between mb-4">
+                                    <div>
+                                        <h3 className="text-sm md:text-base font-semibold">Surah: {surah.namaLatin}</h3>
+                                        <p className="text-xs md:text-sm text-gray-600 mb-3">Arti: {surah.arti}</p>
+                                    </div>
+                                    <div className="rounded-2xl bg-white shadow-3xl h-10 md:h-0 mt-2 ">
+                                        <audio className="h-12 w-45 md:w-70" controls src={surah.audioFull['05']} />
+                                    </div>
+                                </div>
+                                <div dangerouslySetInnerHTML={{ __html: surah.deskripsi }} className="text-xs md:text-sm text-gray-600 mb-3"></div>
+
                             </div>
 
                             {surah.ayat.map((chapter) => (
@@ -127,12 +134,13 @@ export default function SurahComp({ surah }) {
                                         <span className="flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-gray-300 text-xs shrink-0 mt-1">
                                             {chapter.nomorAyat.toLocaleString('ar-SA')}
                                         </span>
-                                        <p dir="rtl" className="text-xl md:text-2xl font-arabic leading-loose">
+                                        <p dir="rtl" className="text-xl md:text-2xl -arabicfont leading-loose">
                                             {chapter.teksArab}
                                         </p>
                                     </div>
                                     <p className="text-sm md:text-base mb-2 text-gray-500 italic">{chapter.teksLatin}</p>
                                     <p className="text-sm md:text-base text-gray-800">{chapter.teksIndonesia}</p>
+                                    <audio className="h-12 w-10 md:w-70" controls src={chapter.audio?.['06']} />
                                 </div>
                             ))}
                         </div>

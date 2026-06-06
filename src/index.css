@@ -3,6 +3,7 @@
 @import "flowbite-react/plugin/tailwindcss";
 @source "../flowbite-react/class-list.json";
 
+
 @font-face {
   font-family: 'Uthman Hafs';
   src: url('../src/assets/Font/mushaf-v4-warsh/uthmanic-warsh_v21.ttf');
