@@ -33,7 +33,7 @@ export default function NavbarComps() {
           </span>
         </NavbarBrand>
       </Link>
-
+      {/* navbar */}
       <NavbarCollapse>
         <Link to="/">
           <NavbarLink active className="!text-emerald-700">
